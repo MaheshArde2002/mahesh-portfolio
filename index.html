@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahesh Arde | Cloud & System Admin Portfolio</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                Mahesh<span>Arde</span>
+                <small>Cloud · Linux · Support</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#roles">Roles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button class="theme-toggle-nav" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1>Mahesh <span>Arde</span></h1>
+            <p class="subtitle">AWS Certified Cloud Practitioner · Linux Administrator · Technical Support</p>
+            <div class="d-flex flex-wrap justify-content-center gap-2 gap-md-3 mt-3 mb-4">
+                <span class="badge-custom"><i class="fas fa-cloud"></i> AWS Cloud</span>
+                <span class="badge-custom purple"><i class="fas fa-server"></i> Linux Admin</span>
+                <span class="badge-custom teal"><i class="fas fa-headset"></i> Tech Support</span>
+                <span class="badge-custom rose"><i class="fas fa-code"></i> Bash · Python</span>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#roles" class="btn-custom"><i class="fas fa-briefcase"></i> View Roles</a>
+                <a href="#projects" class="btn-custom btn-outline-custom"><i class="fas fa-folder-open"></i> Projects</a>
+                <a href="#contact" class="btn-custom btn-teal"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ROLES ========== -->
+    <section id="roles">
+        <div class="container">
+            <h2 class="section-title">Roles I'm <span style="color:var(--accent);">Targeting</span></h2>
+            <p class="section-sub">Three career paths based on my hands-on experience and certifications.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="role-card">
+                        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <span class="role-tag">Primary</span>
+                        <h3>AWS Cloud Support</h3>
+                        <ul>
+                            <li class="purple">AWS: EC2, S3, VPC, IAM, RDS, ALB</li>
+                            <li class="purple">Troubleshoot cloud infrastructure</li>
+                            <li class="purple">CloudWatch &amp; cost optimization</li>
+                            <li class="purple">Security groups, IAM, networking</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="role-card purple">
+                        <div class="icon purple"><i class="fas fa-server"></i></div>
+                        <span class="role-tag purple">Secondary</span>
+                        <h3>Junior System Administrator</h3>
+                        <ul>
+                            <li class="purple">Ubuntu Linux administration</li>
+                            <li class="purple">User/group, permissions, SSH</li>
+                            <li class="purple">Nginx, Apache, reverse proxy</li>
+                            <li class="purple">Bash scripting, cron, logs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="role-card teal">
+                        <div class="icon teal"><i class="fas fa-headset"></i></div>
+                        <span class="role-tag teal">Alternative</span>
+                        <h3>Technical Support Engineer</h3>
+                        <ul>
+                            <li class="teal">Hardware/software/network troubleshooting</li>
+                            <li class="teal">Live production environment support</li>
+                            <li class="teal">Incident resolution &amp; documentation</li>
+                            <li class="teal">Customer-facing technical assistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" style="padding-top:0;">
+        <div class="container">
+            <h2 class="section-title">Projects <span style="color:var(--accent);">Portfolio</span></h2>
+            <p class="section-sub">A curated selection of hands-on projects demonstrating my cloud, Linux, and support skills.</p>
+
+            <!-- Cloud Projects -->
+            <div style="margin-bottom:48px;">
+                <div class="role-project-title">
+                    <i class="fas fa-cloud"></i> AWS Cloud Projects
+                    <span class="accent-line"></span>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon blue"><i class="fas fa-network-wired"></i></div>
+                                <span class="project-category">VPC</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Secure VPC Networking</h4>
+                                <p class="project-desc">Custom VPC with public/private subnets, IGW, route tables, and Security Groups.</p>
+                                <div class="tech-tags">
+                                    <span>VPC</span><span>EC2</span><span>IGW</span><span>SG</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon blue"><i class="fas fa-database"></i></div>
+                                <span class="project-category">RDS</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>EC2 + RDS MySQL</h4>
+                                <p class="project-desc">Connected Ubuntu EC2 to RDS MySQL, created databases and executed SQL queries.</p>
+                                <div class="tech-tags">
+                                    <span>RDS</span><span>EC2</span><span>MySQL</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon blue"><i class="fas fa-chart-line"></i></div>
+                                <span class="project-category">Auto Scaling</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Auto Scaling &amp; ALB</h4>
+                                <p class="project-desc">Deployed Launch Templates, Auto Scaling Groups, and Application Load Balancer.</p>
+                                <div class="tech-tags">
+                                    <span>Auto Scaling</span><span>ALB</span><span>EC2</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon blue"><i class="fas fa-bucket"></i></div>
+                                <span class="project-category">S3</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>S3 Static Website</h4>
+                                <p class="project-desc">Hosted static website on S3 with bucket policies, public access, and custom error pages.</p>
+                                <div class="tech-tags">
+                                    <span>S3</span><span>Static Hosting</span><span>IAM</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linux Admin Projects -->
+            <div style="margin-bottom:48px;">
+                <div class="role-project-title">
+                    <i class="fas fa-terminal" style="color:var(--accent-purple);"></i> Linux Administration
+                    <span class="accent-line"></span>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon purple"><i class="fas fa-users-cog"></i></div>
+                                <span class="project-category">Admin</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>User Management Lab</h4>
+                                <p class="project-desc">Created users/groups, managed permissions, sudo privileges, and SSH authentication.</p>
+                                <div class="tech-tags">
+                                    <span>Ubuntu</span><span>SSH</span><span>sudo</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon purple"><i class="fas fa-arrow-right-arrow-left"></i></div>
+                                <span class="project-category">Proxy</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Nginx Reverse Proxy</h4>
+                                <p class="project-desc">Configured Nginx as reverse proxy with SSL/TLS, virtual hosts, and UFW firewall.</p>
+                                <div class="tech-tags">
+                                    <span>Nginx</span><span>SSL</span><span>UFW</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon purple"><i class="fas fa-chart-pie"></i></div>
+                                <span class="project-category">Monitoring</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>System Monitoring</h4>
+                                <p class="project-desc">Monitored CPU, memory, disk with htop, vmstat, iostat and Bash alert scripts.</p>
+                                <div class="tech-tags">
+                                    <span>Bash</span><span>htop</span><span>cron</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon purple"><i class="fas fa-file-code"></i></div>
+                                <span class="project-category">Automation</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Shell Scripting</h4>
+                                <p class="project-desc">Automated backups, log cleanup, user creation with loops, functions, and conditionals.</p>
+                                <div class="tech-tags">
+                                    <span>Bash</span><span>Loops</span><span>Functions</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Support Projects -->
+            <div>
+                <div class="role-project-title">
+                    <i class="fas fa-life-ring" style="color:var(--accent-teal);"></i> Technical Support
+                    <span class="accent-line"></span>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon teal"><i class="fas fa-server"></i></div>
+                                <span class="project-category">Deployment</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>AWS Web Server</h4>
+                                <p class="project-desc">Launched EC2 with Nginx, configured Security Groups for HTTP/SSH access.</p>
+                                <div class="tech-tags">
+                                    <span>EC2</span><span>Nginx</span><span>SG</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon teal"><i class="fas fa-sitemap"></i></div>
+                                <span class="project-category">Proxy</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Reverse Proxy Server</h4>
+                                <p class="project-desc">Configured Nginx as reverse proxy with config validation and log troubleshooting.</p>
+                                <div class="tech-tags">
+                                    <span>Nginx</span><span>Reverse Proxy</span><span>Logs</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon teal"><i class="fas fa-tools"></i></div>
+                                <span class="project-category">Admin</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Linux Admin Lab</h4>
+                                <p class="project-desc">Managed services with systemctl, packages with APT, cron jobs, and SSH.</p>
+                                <div class="tech-tags">
+                                    <span>systemctl</span><span>cron</span><span>SSH</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <div class="project-icon teal"><i class="fas fa-shield-alt"></i></div>
+                                <span class="project-category">Security</span>
+                            </div>
+                            <div class="project-body">
+                                <h4>Secure VPC Setup</h4>
+                                <p class="project-desc">Designed VPC with subnets, IGW, route tables, and Security Group rules.</p>
+                                <div class="tech-tags">
+                                    <span>VPC</span><span>Subnets</span><span>SG</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical <span style="color:var(--accent);">Skills</span></h2>
+            <p class="section-sub">Core competencies across cloud, Linux, networking, and support.</p>
+            <div class="row g-4">
+                <!-- AWS Cloud -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fas fa-cloud" style="color:var(--accent);"></i>
+                            <h4>AWS Cloud</h4>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span>EC2, S3, VPC, IAM</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>RDS, Auto Scaling, ALB</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>CloudWatch, Cost Management</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>AWS CLI, IAM Policies</span>
+                                <span class="skill-level intermediate">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linux Admin -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fas fa-linux" style="color:var(--accent-purple);"></i>
+                            <h4>Linux Administration</h4>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span>Ubuntu Server, SSH</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>User/Group, Permissions</span>
+                                <span class="skill-level expert">Expert</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>Bash Scripting, Cron Jobs</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>systemctl, APT, Log Analysis</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Networking -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fas fa-network-wired" style="color:var(--accent-teal);"></i>
+                            <h4>Networking</h4>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span>TCP/IP, DNS, DHCP</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>Subnetting, CIDR, Routing</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>Security Groups, Firewall</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>HTTP/HTTPS, SSL/TLS</span>
+                                <span class="skill-level intermediate">Intermediate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dev & Tools -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <i class="fas fa-code" style="color:var(--accent-rose);"></i>
+                            <h4>Dev &amp; Tools</h4>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <span>Python, Flask, HTML/CSS</span>
+                                <span class="skill-level basic">Basic</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>MySQL, SQL Queries</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>Git, GitHub, Version Control</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                            <div class="skill-item">
+                                <span>VMware, VirtualBox</span>
+                                <span class="skill-level pro">Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CERTIFICATIONS ========== -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-sub">Credentials that validate my cloud, Linux, and infrastructure knowledge.</p>
+            <div class="row g-3">
+                <div class="col-md-3 col-sm-6">
+                    <div class="cert-item">
+                        <i class="fab fa-aws"></i>
+                        <div><strong>AWS Cloud Practitioner</strong><span style="color:var(--text-muted);font-size:0.8rem;display:block;">CLF-C02</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="cert-item">
+                        <i class="fab fa-linux"></i>
+                        <div><strong>Linux Essentials</strong><span style="color:var(--text-muted);font-size:0.8rem;display:block;">Linux Foundation</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="cert-item">
+                        <i class="fas fa-terminal"></i>
+                        <div><strong>Bash Scripting</strong><span style="color:var(--text-muted);font-size:0.8rem;display:block;">Hands-on</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="cert-item">
+                        <i class="fas fa-code"></i>
+                        <div><strong>Terraform Fundamentals</strong><span style="color:var(--text-muted);font-size:0.8rem;display:block;">Mind Luster</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in <span style="color:var(--accent);">Touch</span></h2>
+            <p class="section-sub">Let's connect about Cloud Support, System Admin, or Technical Support roles.</p>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div><strong>Email</strong><br /><span style="color:var(--text-secondary);">mahesh.arde2002@gmail.com</span></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div><strong>Phone</strong><br /><span style="color:var(--text-secondary);">+91 88285 52780</span></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <div><strong>LinkedIn</strong><br /><span style="color:var(--text-secondary);">/in/mahesh-arde-75b0bb31a</span></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div><strong>GitHub</strong><br /><span style="color:var(--text-secondary);">github.com/MaheshArde</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form id="contactForm">
+                        <div id="formMessage" class="alert" style="display:none;"></div>
+                        <input type="text" class="form-control-custom" id="formName" placeholder="Your Name" required />
+                        <input type="email" class="form-control-custom" id="formEmail" placeholder="Email Address" required />
+                        <input type="text" class="form-control-custom" id="formSubject" placeholder="Subject" />
+                        <textarea class="form-control-custom" id="formMessageText" rows="4" placeholder="Tell me about the role or opportunity..." required></textarea>
+                        <button type="submit" class="btn-custom w-100" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-custom">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">&copy; 2026 Mahesh Arde — Built for Cloud, Linux &amp; Support Roles</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

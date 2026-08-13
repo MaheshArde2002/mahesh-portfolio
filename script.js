@@ -1,11 +1,16 @@
 (function() {
-    // Theme toggle
+    'use strict';
+
+    // ========== Theme Toggle ==========
     const themeToggle = document.getElementById('themeToggle');
     const icon = themeToggle.querySelector('i');
+
+    // Check saved theme
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
         icon.classList.replace('fa-moon', 'fa-sun');
     }
+
     themeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
@@ -14,62 +19,138 @@
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // Mobile menu
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+    // ========== Close Mobile Menu ==========
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const collapse = document.getElementById('navbarNav');
+            const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+            if (bsCollapse) bsCollapse.hide();
+        });
+    });
 
-    // Skill tabs
-    const skillTabs = document.querySelectorAll('#skillTabs .tab');
-    const skillContents = {
-        tab1: document.getElementById('tab1'),
-        tab2: document.getElementById('tab2'),
-        tab3: document.getElementById('tab3')
+    // ========== Smooth Scroll for Nav Links ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                const navHeight = document.querySelector('.navbar-custom').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ========== Contact Form with Backend API ==========
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const subject = document.getElementById('formSubject').value.trim() || 'Portfolio Contact';
+            const message = document.getElementById('formMessageText').value.trim();
+
+            // Validate
+            if (!name || !email || !message) {
+                showMessage('Please fill in all required fields.', 'danger');
+                return;
+            }
+
+            // Email validation
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'danger');
+                return;
+            }
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, subject, message })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('Thank you! Mahesh will get back to you soon. 🎉', 'success');
+                    contactForm.reset();
+                } else {
+                    showMessage(data.message || 'Something went wrong. Please try again.', 'danger');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showMessage('Network error. Please check your connection and try again.', 'danger');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            }
+        });
+    }
+
+    // ========== Helper Functions ==========
+    function showMessage(text, type) {
+        formMessage.style.display = 'block';
+        formMessage.className = `alert alert-${type}`;
+        formMessage.textContent = text;
+        
+        // Auto hide after 6 seconds
+        clearTimeout(window.messageTimeout);
+        window.messageTimeout = setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 6000);
+    }
+
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    // ========== Intersection Observer for Animations ==========
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
-    skillTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            skillTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            Object.values(skillContents).forEach(c => c.classList.remove('active'));
-            const target = document.getElementById(this.dataset.tab);
-            if (target) target.classList.add('active');
-        });
-    });
 
-    // Project filters
-    const filterBtns = document.querySelectorAll('#projectFilters .tab');
-    const projectCards = document.querySelectorAll('.project-card');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.dataset.filter;
-            projectCards.forEach(card => {
-                const type = card.dataset.type;
-                if (filter === 'all' || type === filter) card.classList.add('active');
-                else card.classList.remove('active');
-            });
-        });
-    });
-
-    // Contact form
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you, Mahesh will get back to you soon!');
-        this.reset();
-    });
-
-    // Skill bars animation (if you add .skill-progress elements later)
-    const bars = document.querySelectorAll('.skill-progress');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const bar = entry.target;
-                const w = bar.dataset.width || '70';
-                bar.style.width = w + '%';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, { threshold: 0.3 });
-    bars.forEach(b => observer.observe(b));
+    }, observerOptions);
+
+    // Animate cards on scroll
+    document.querySelectorAll('.role-card, .project-card, .skill-card, .cert-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // ========== Console Welcome ==========
+    console.log('%c🚀 Mahesh Arde Portfolio', 'font-size: 20px; font-weight: bold; color: #2563eb;');
+    console.log('%cBuilt with ❤️ using HTML, CSS, JavaScript & Bootstrap', 'font-size: 14px; color: #64748b;');
+    console.log('%c📧 mahesh.arde2002@gmail.com', 'font-size: 14px; color: #64748b;');
+
 })();
+
